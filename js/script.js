@@ -22,7 +22,7 @@ choiceElements.forEach((item) => {
     let aiChoice = aiSelection();
 
     handAction(userChoice, aiChoice);
-    
+
     // result(userChoice, aiChoice);
 
     setTimeout(() => {
@@ -38,13 +38,8 @@ function handAction(userChoice, aiChoice) {
 }
 
 function aiSelection() {
-  let choice = randomNum();
+  let choice = Math.floor(Math.random() * 3);
   return options[choice];
-}
-
-function randomNum() {
-  let number = Math.floor(Math.random() * 3);
-  return number;
 }
 
 function result(user, ai) {
