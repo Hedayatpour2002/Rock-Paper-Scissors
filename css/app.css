@@ -168,7 +168,7 @@ button {
 }
 .action {
   position: absolute;
-  top: -26rem;
+  top: -27rem;
   z-index: 2;
 }
 .ai__action {
@@ -184,7 +184,7 @@ button {
   height: 78.3rem;
   background: url("../images/human/rock-human.png") no-repeat center;
   transform: rotate(-14.417deg) scaleX(-1);
-  right: 29rem;
+  right: 28rem;
   animation: humanActionShake 2s linear infinite both alternate;
 }
 .arm {
@@ -199,7 +199,7 @@ button {
   width: 44.3rem;
   height: 121.8rem;
   background: url("../images/human/arm-human.png") no-repeat center;
-  transform: rotate(-50deg);
+  transform: rotate(-50deg) scaleX(-1);
 }
 
 /* animations */
@@ -244,22 +244,19 @@ button {
   0 {
     transform: rotate(14.417deg);
   }
-  50% {
-    transform: rotate(19.417deg) translateX(2rem);
-  }
+
   100% {
-    transform: rotate(14.417deg);
+    transform: rotate(19.417deg);
   }
 }
 @keyframes humanActionShake {
   0 {
     transform: rotate(-14.417deg) scaleX(-1);
   }
-  50% {
-    transform: rotate(-19.417deg) scaleX(-1) translateX(2rem);
-  }
   100% {
-    transform: rotate(-14.417deg) scaleX(-1);
+    transform: rotate(-25.417deg) scaleX(-1);
+    right: 75%;
+    top: -20%;
   }
 }
 /* choice hover */
