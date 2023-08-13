@@ -148,17 +148,23 @@ button {
   right: 0;
   top: 0;
   bottom: 0;
+  overflow: hidden;
 }
 .hand {
   position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
+  bottom: -10%;
 }
 .ai_hand {
+  animation: aiHandShake 2s linear infinite both;
+  left: -5%;
 }
 .human_hand {
   justify-self: flex-end;
+  animation: humanHandShake 2s linear infinite both;
+  right: -5%;
 }
 .action {
   position: absolute;
@@ -171,6 +177,7 @@ button {
   background: url("../images/ai/rock-ai.png") no-repeat center;
   transform: rotate(14.417deg);
   left: 37rem;
+  animation: aiActionShake 2s linear infinite both;
 }
 .human__action {
   width: 76.1rem;
@@ -178,6 +185,7 @@ button {
   background: url("../images/human/rock-human.png") no-repeat center;
   transform: rotate(-14.417deg) scaleX(-1);
   right: 35rem;
+  animation: humanActionShake 2s linear infinite both;
 }
 .arm {
 }
@@ -196,6 +204,76 @@ button {
 
 /* animations */
 
+@keyframes aiHandShake {
+  0 {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes aiActionShake {
+  0 {
+    transform: rotate(14.417deg);
+  }
+  25% {
+    transform: rotate(12deg);
+  }
+  50% {
+    transform: rotate(14.417deg);
+  }
+  75% {
+    transform: rotate(16.834deg);
+  }
+  100% {
+    transform: rotate(14.417deg);
+  }
+}
+
+@keyframes humanHandShake {
+  0 {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes humanActionShake {
+  0 {
+    transform: rotate(-14.417deg) scaleX(-1);
+  }
+  25% {
+    transform: rotate(-12deg) scaleX(-1);
+  }
+  50% {
+    transform: rotate(-14.417deg) scaleX(-1);
+  }
+  75% {
+    transform: rotate(-16.834deg) scaleX(-1);
+  }
+  100% {
+    transform: rotate(-14.417deg) scaleX(-1);
+  }
+}
 /* choice hover */
 @keyframes skew-y-shakeing {
   0% {
