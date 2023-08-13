@@ -168,7 +168,7 @@ button {
 }
 .action {
   position: absolute;
-  top: -28rem;
+  top: -26rem;
   z-index: 2;
 }
 .ai__action {
@@ -177,15 +177,15 @@ button {
   background: url("../images/ai/rock-ai.png") no-repeat center;
   transform: rotate(14.417deg);
   left: 37rem;
-  animation: aiActionShake 2s linear infinite both;
+  animation: aiActionShake 2s linear infinite both alternate;
 }
 .human__action {
   width: 76.1rem;
   height: 78.3rem;
   background: url("../images/human/rock-human.png") no-repeat center;
   transform: rotate(-14.417deg) scaleX(-1);
-  right: 35rem;
-  animation: humanActionShake 2s linear infinite both;
+  right: 29rem;
+  animation: humanActionShake 2s linear infinite both alternate;
 }
 .arm {
 }
@@ -221,23 +221,6 @@ button {
     transform: rotate(0deg);
   }
 }
-@keyframes aiActionShake {
-  0 {
-    transform: rotate(14.417deg);
-  }
-  25% {
-    transform: rotate(12deg);
-  }
-  50% {
-    transform: rotate(14.417deg);
-  }
-  75% {
-    transform: rotate(16.834deg);
-  }
-  100% {
-    transform: rotate(14.417deg);
-  }
-}
 
 @keyframes humanHandShake {
   0 {
@@ -257,18 +240,23 @@ button {
   }
 }
 
+@keyframes aiActionShake {
+  0 {
+    transform: rotate(14.417deg);
+  }
+  50% {
+    transform: rotate(19.417deg) translateX(2rem);
+  }
+  100% {
+    transform: rotate(14.417deg);
+  }
+}
 @keyframes humanActionShake {
   0 {
     transform: rotate(-14.417deg) scaleX(-1);
   }
-  25% {
-    transform: rotate(-12deg) scaleX(-1);
-  }
   50% {
-    transform: rotate(-14.417deg) scaleX(-1);
-  }
-  75% {
-    transform: rotate(-16.834deg) scaleX(-1);
+    transform: rotate(-19.417deg) scaleX(-1) translateX(2rem);
   }
   100% {
     transform: rotate(-14.417deg) scaleX(-1);
