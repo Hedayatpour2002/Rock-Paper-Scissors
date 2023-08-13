@@ -28,44 +28,56 @@
   </head>
   <body>
     <div class="container">
-      <!-- result -->
-      <section class="result">
-        <div class="result__wrapper">
-          <p class="result__score ai-score">0</p>
-          <p class="result__name">ai</p>
-        </div>
-        <div class="result__wrapper">
-          <p class="result__score humen-score">0</p>
-          <p class="result__name">you</p>
-        </div>
-      </section>
+      <div class="wrapper">
+        <!-- result -->
+        <section class="result">
+          <div class="result__wrapper">
+            <p class="result__score ai-score">0</p>
+            <p class="result__name">ai</p>
+          </div>
+          <div class="result__wrapper">
+            <p class="result__score human-score">0</p>
+            <p class="result__name">you</p>
+          </div>
+        </section>
 
-      <!-- choice -->
-      <section class="choice">
-        <!-- rock -->
-        <button class="choice__btn" title="Rock" data-choice="rock">
-          <img
-            src="images/choice/rock-human.svg"
-            alt="rock"
-            class="choice__img"
-          />
-        </button>
-        <!-- paper -->
-        <button class="choice__btn" title="Paper" data-choice="paper">
-          <img
-            src="images/choice/paper-human.svg"
-            alt="paper"
-            class="choice__img"
-          />
-        </button>
-        <!-- scissors -->
-        <button class="choice__btn" title="Scissors" data-choice="scissors">
-          <img
-            src="images/choice/scissors-human.svg"
-            alt="scissors"
-            class="choice__img"
-          />
-        </button>
+        <!-- choice -->
+        <section class="choice">
+          <!-- rock -->
+          <button class="choice__btn" title="Rock" data-choice="rock">
+            <img
+              src="images/choice/rock-human.svg"
+              alt="rock"
+              class="choice__img"
+            />
+          </button>
+          <!-- paper -->
+          <button class="choice__btn" title="Paper" data-choice="paper">
+            <img
+              src="images/choice/paper-human.svg"
+              alt="paper"
+              class="choice__img"
+            />
+          </button>
+          <!-- scissors -->
+          <button class="choice__btn" title="Scissors" data-choice="scissors">
+            <img
+              src="images/choice/scissors-human.svg"
+              alt="scissors"
+              class="choice__img"
+            />
+          </button>
+        </section>
+      </div>
+      <section class="hand__wrapper">
+        <div class="ai_hand hand">
+          <div class="ai__action action"></div>
+          <div class="ai__arm arm"></div>
+        </div>
+        <div class="human_hand hand">
+          <div class="human__action action"></div>
+          <div class="human__arm arm"></div>
+        </div>
       </section>
     </div>
 

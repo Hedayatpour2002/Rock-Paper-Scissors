@@ -1,7 +1,7 @@
 const $ = document;
 
 const choiceElements = $.querySelectorAll(".choice__btn");
-const userScoreElem = $.querySelector(".humen-score");
+const userScoreElem = $.querySelector(".human-score");
 const aiScoreElem = $.querySelector(".ai-score");
 
 const options = ["rock", "paper", "scissors"];

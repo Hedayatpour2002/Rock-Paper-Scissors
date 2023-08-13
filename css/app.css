@@ -11,6 +11,7 @@
 html {
   box-sizing: border-box;
   font-size: 10px;
+  overflow-x: hidden;
 }
 *,
 *::after,
@@ -49,12 +50,13 @@ button {
 .container {
   width: 100%;
   min-height: 100vh;
-  padding: 1.5rem;
   color: #fff;
   background-color: var(--blue);
   position: relative;
 }
-
+.wrapper {
+  padding: 1.5rem;
+}
 /* result */
 .result {
   display: flex;
@@ -76,7 +78,7 @@ button {
 }
 .ai-score {
 }
-.humen-score {
+.human-score {
 }
 .result__name {
   font-size: 4.8rem;
@@ -96,6 +98,7 @@ button {
   left: 0;
   right: 0;
   gap: 3.1rem;
+  z-index: 100;
 }
 .choice__btn {
   display: flex;
@@ -135,9 +138,65 @@ button {
   animation: skew-y-shakeing 0.3s 1 forwards alternate;
 }
 
-/* animations */
-/* choice hover */
+/* hand */
+.hand__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.hand {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.ai_hand {
+}
+.human_hand {
+  justify-self: flex-end;
+}
+.action {
+  position: absolute;
+  top: -28rem;
+  z-index: 2;
+}
+.ai__action {
+  width: 78.9rem;
+  height: 80.5rem;
+  background: url("../images/ai/rock-ai.png") no-repeat center;
+  transform: rotate(14.417deg);
+  left: 37rem;
+}
+.human__action {
+  width: 76.1rem;
+  height: 78.3rem;
+  background: url("../images/human/rock-human.png") no-repeat center;
+  transform: rotate(-14.417deg) scaleX(-1);
+  right: 35rem;
+}
+.arm {
+}
+.ai__arm {
+  width: 44.1rem;
+  height: 121.6rem;
+  background: url("../images/ai/arm-ai.png") no-repeat center;
+  transform: rotate(50deg);
+}
+.human__arm {
+  width: 44.3rem;
+  height: 121.8rem;
+  background: url("../images/human/arm-human.png") no-repeat center;
+  transform: rotate(-50deg);
+}
 
+/* animations */
+
+/* choice hover */
 @keyframes skew-y-shakeing {
   0% {
     transform: rotate(0deg) translateX(0px) translateY(0px);
