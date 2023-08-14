@@ -53,6 +53,10 @@ button {
   color: #fff;
   background-color: var(--blue);
   position: relative;
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
 }
 .wrapper {
   padding: 1.5rem;
@@ -211,13 +215,12 @@ button {
 }
 
 /* ###############  */ /* todo */
-.result .action{
+.result .action {
   top: -23rem;
 }
 .result .ai__action {
   transform: rotate(30deg);
   left: 39rem;
-
 }
 .result .human__action {
   transform: rotate(-30deg) scaleX(-1);
@@ -254,17 +257,19 @@ button {
 }
 /* ############### */
 .arm {
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .ai__arm {
   width: 44.1rem;
   height: 121.6rem;
-  background: url("../images/ai/arm-ai.png") no-repeat center;
+  background-image: url("../images/ai/arm-ai.png");
   transform: rotate(50deg);
 }
 .human__arm {
   width: 44.3rem;
   height: 121.8rem;
-  background: url("../images/human/arm-human.png") no-repeat center;
+  background-image: url("../images/human/arm-human.png");
   transform: rotate(-50deg) scaleX(-1);
 }
 
