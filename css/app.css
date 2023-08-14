@@ -100,6 +100,13 @@ button {
   gap: 3.1rem;
   z-index: 100;
 }
+/* ############### */ /* todo */
+.processing .choice,
+.result .choice {
+  display: none;
+}
+/* ############### */
+
 .choice__btn {
   display: flex;
   align-items: center;
@@ -166,27 +173,86 @@ button {
   animation: humanHandShake 2s linear infinite both;
   right: -5%;
 }
+
+/* ############### */ /* todo */
+.processing .ai_hand {
+  animation: aiProcessing 2s linear 1 both;
+}
+.processing .human_hand {
+  animation: humanProcessing 2s linear 1 both;
+}
+.result .hand {
+  animation: none;
+}
+/* ############### */
+
 .action {
   position: absolute;
   top: -27rem;
   z-index: 2;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .ai__action {
   width: 78.9rem;
   height: 80.5rem;
-  background: url("../images/ai/rock-ai.png") no-repeat center;
   transform: rotate(14.417deg);
   left: 37rem;
   animation: aiActionShake 2s linear infinite both alternate;
+  background-image: url("../images/ai/rock-ai.png");
 }
 .human__action {
   width: 76.1rem;
   height: 78.3rem;
-  background: url("../images/human/rock-human.png") no-repeat center;
   transform: rotate(-14.417deg) scaleX(-1);
   right: 28rem;
   animation: humanActionShake 2s linear infinite both alternate;
+  background-image: url("../images/human/rock-human.png");
 }
+
+/* ###############  */ /* todo */
+.result .action{
+  top: -23rem;
+}
+.result .ai__action {
+  transform: rotate(30deg);
+  left: 39rem;
+
+}
+.result .human__action {
+  transform: rotate(-30deg) scaleX(-1);
+  right: 33rem;
+}
+/* rock */
+.result .ai__action--rock {
+  background-image: url("../images/ai/rock-ai.png");
+}
+.result .human__action--rock {
+  background-image: url("../images/human/rock-human.png");
+}
+
+/* paper */
+.result .ai__action--paper {
+  background-image: url("../images/ai/paper-ai.png");
+}
+.result .human__action--paper {
+  background-image: url("../images/human/paper-human.png");
+}
+
+/* scissors */
+.result .ai__action--scissors {
+  background-image: url("../images/ai/scissors-ai.png");
+}
+.result .human__action--scissors {
+  background-image: url("../images/human/scissors-human.png");
+}
+
+/*  */
+
+.result .action--animationPaused {
+  animation-play-state: paused;
+}
+/* ############### */
 .arm {
 }
 .ai__arm {
@@ -259,6 +325,61 @@ button {
     top: -20%;
   }
 }
+
+/* Processing */
+@keyframes aiProcessing {
+  0 {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(-15deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes humanProcessing {
+  0 {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(15deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 /* choice hover */
 @keyframes skew-y-shakeing {
   0% {

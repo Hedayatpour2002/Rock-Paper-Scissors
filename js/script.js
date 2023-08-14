@@ -1,8 +1,13 @@
 const $ = document;
+const body = $.body;
 
-const choiceElements = $.querySelectorAll(".choice__btn");
 const userScoreElem = $.querySelector(".human-score");
 const aiScoreElem = $.querySelector(".ai-score");
+const choiceElements = $.querySelectorAll(".choice__btn");
+
+const actionElements = $.querySelectorAll(".action");
+const aiActionElem = $.querySelector(".ai__action");
+const humanActionElem = $.querySelector(".human__action");
 
 const options = ["rock", "paper", "scissors"];
 const scores = { user: 0, ai: 0 };
@@ -23,16 +28,16 @@ choiceElements.forEach((item) => {
 
     handAction(userChoice, aiChoice);
 
-    // result(userChoice, aiChoice);
-
     setTimeout(() => {
       result(userChoice, aiChoice);
-    }, 1000);
+    }, 2000);
   });
 });
 
 function handAction(userChoice, aiChoice) {
   // dom update !! //todo
+  $.body.classList.add("processing");
+
   console.log("User : " + userChoice);
   console.log("AI : " + aiChoice);
 }
@@ -43,8 +48,9 @@ function aiSelection() {
 }
 
 function result(user, ai) {
+  resultAnimation(user, ai);
+
   if (user === ai) {
-    // dom update !! //todo
     console.log("drow");
   } else if (
     (user === "rock" && ai === "scissors") ||
@@ -69,4 +75,15 @@ function updateResultElements() {
 }
 function updateLocalStorage() {
   localStorage.setItem("scores", JSON.stringify(scores));
+}
+
+function resultAnimation(user, ai) {
+  body.classList.replace("processing", "result");
+
+  actionElements.forEach((item) => {
+    item.classList.add("action--animationPaused");
+  });
+
+  aiActionElem.classList.add(`ai__action--${ai}`);
+  humanActionElem.classList.add(`human__action--${user}`);
 }
