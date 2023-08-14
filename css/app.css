@@ -93,7 +93,8 @@ button {
 }
 
 /* choice */
-.choice {
+.choice,
+.outcome {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -271,6 +272,47 @@ button {
   height: 121.8rem;
   background-image: url("../images/human/arm-human.png");
   transform: rotate(-50deg) scaleX(-1);
+}
+
+/* outcome */
+.outcome {
+  display: none;
+  flex-direction: column;
+}
+.outcome__title {
+  text-shadow: 4px 4px 0px #000;
+  font-size: 9.6rem;
+  letter-spacing: -0.96rem;
+  -webkit-text-stroke: 5px #000;
+}
+.outcome__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+  flex-wrap: wrap;
+}
+.outcome__btn {
+  font-size: 3.2rem;
+  font-family: Shrikhand;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0px 0px #000, 4px -7px 0px 0px #c2c2c2 inset;
+  transition: all 0.2s;
+}
+.outcome__btn span {
+  transition: all 0.2s;
+}
+.outcome__btn:hover span {
+  display: flex;
+  align-items: center;justify-content: center;
+  transform: rotate(-3deg);
+}
+.outcome__btn:hover {
+  box-shadow: 4px 8px 0px 0px #000, 3px -5px 0px 0px #c2c2c2 inset;
+}
+.outcome__next {
+}
+.outcome__restart {
 }
 
 /* animations */
