@@ -9,6 +9,10 @@ const actionElements = $.querySelectorAll(".action");
 const aiActionElem = $.querySelector(".ai__action");
 const humanActionElem = $.querySelector(".human__action");
 
+const outcomeTitleElem = $.querySelector(".outcome__title");
+const nextElem = $.querySelector(".outcome__next");
+const restartElem = $.querySelector(".outcome__restart");
+
 const options = ["rock", "paper", "scissors"];
 const scores = { user: 0, ai: 0 };
 
@@ -51,19 +55,17 @@ function result(user, ai) {
   resultAnimation(user, ai);
 
   if (user === ai) {
-    console.log("drow");
+    outcomeTitleElem.innerHTML = "it's a drow";
   } else if (
     (user === "rock" && ai === "scissors") ||
     (user === "paper" && ai === "rock") ||
     (user === "scissors" && ai === "paper")
   ) {
-    // dom update !! //todo
+    outcomeTitleElem.innerHTML = "you win!";
     scores.user++;
-    console.warn("user win");
   } else {
-    // dom update !! //todo
+    outcomeTitleElem.innerHTML = "you loose!";
     scores.ai++;
-    console.error("ai win");
   }
 
   updateResultElements();
@@ -85,5 +87,25 @@ function resultAnimation(user, ai) {
   });
 
   aiActionElem.classList.add(`ai__action--${ai}`);
+  console.log(user);
   humanActionElem.classList.add(`human__action--${user}`);
+}
+
+nextElem.addEventListener("click", () => {
+  body.classList.remove("result");
+  removeActionElementsClass();
+});
+restartElem.addEventListener("click", () => {
+  body.classList.remove("result");
+  scores.user = scores.ai = 0;
+  removeActionElementsClass();
+  updateResultElements();
+  updateLocalStorage();
+});
+
+function removeActionElementsClass() {
+  let humanCalss = humanActionElem.classList;
+  let aiCalss = aiActionElem.classList;
+  humanCalss.remove(humanCalss[humanCalss.length - 1]);
+  aiCalss.remove(aiCalss[aiCalss.length - 1]);
 }

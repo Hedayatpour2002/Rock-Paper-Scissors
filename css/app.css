@@ -279,7 +279,11 @@ button {
   display: none;
   flex-direction: column;
 }
+.result .outcome{
+  display: flex;
+}
 .outcome__title {
+  text-transform: uppercase;
   text-shadow: 4px 4px 0px #000;
   font-size: 9.6rem;
   letter-spacing: -0.96rem;
