@@ -30,21 +30,13 @@ choiceElements.forEach((item) => {
     let userChoice = item.dataset.choice;
     let aiChoice = aiSelection();
 
-    handAction(userChoice, aiChoice);
+    $.body.classList.add("processing");
 
     setTimeout(() => {
       result(userChoice, aiChoice);
     }, 2000);
   });
 });
-
-function handAction(userChoice, aiChoice) {
-  // dom update !! //todo
-  $.body.classList.add("processing");
-
-  console.log("User : " + userChoice);
-  console.log("AI : " + aiChoice);
-}
 
 function aiSelection() {
   let choice = Math.floor(Math.random() * 3);
@@ -87,7 +79,6 @@ function resultAnimation(user, ai) {
   });
 
   aiActionElem.classList.add(`ai__action--${ai}`);
-  console.log(user);
   humanActionElem.classList.add(`human__action--${user}`);
 }
 
@@ -108,4 +99,7 @@ function removeActionElementsClass() {
   let aiCalss = aiActionElem.classList;
   humanCalss.remove(humanCalss[humanCalss.length - 1]);
   aiCalss.remove(aiCalss[aiCalss.length - 1]);
+
+  humanCalss.remove("action--animationPaused");
+  aiCalss.remove("action--animationPaused");
 }
