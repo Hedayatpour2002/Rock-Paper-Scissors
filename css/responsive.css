@@ -1,11 +1,133 @@
 @media (max-width: 1400px) {
-
+  .result__score {
+    font-size: 14rem;
+  }
+  .result__name {
+    font-size: 4rem;
+  }
 }
 @media (max-width: 1200px) {
+  .hand {
+    width: 20rem;
+    height: 50rem;
+  }
+  .outcome__title {
+    font-size: 7rem;
+  }
 }
 @media (max-width: 992px) {
+  .result__score {
+    font-size: 10rem;
+  }
+  .result__name {
+    font-size: 3rem;
+  }
+  .outcome__title {
+    font-size: 5rem;
+    letter-spacing: 0;
+  }
+  .hand {
+    width: 16rem;
+    height: 40rem;
+  }
+  .choice__btn {
+    width: 10rem;
+    height: 10rem;
+  }
+  .outcome {
+    flex-grow: 1;
+    justify-content: space-between;
+  }
 }
 @media (max-width: 768px) {
+  .result__score {
+    font-size: 5rem;
+    margin: -2rem 0;
+  }
+  .result__name {
+    letter-spacing: 0;
+    font-size: 2rem;
+  }
+  .outcome__title {
+    font-size: 4rem;
+  }
+  .outcome__btn {
+    font-size: 2.5rem;
+  }
+  .choice__btn {
+    width: 8rem;
+    height: 8rem;
+  }
+  .hand {
+    width: 12rem;
+    height: 30rem;
+  }
+  .choice,
+  .outcome {
+    bottom: 0;
+  }
 }
 @media (max-width: 576px) {
+  .hand {
+    width: 10rem;
+    height: 25rem;
+  }
+  .choice__btn {
+    width: 7rem;
+    height: 7rem;
+  }
+  .outcome,
+  .choice {
+    flex-grow: 1;
+    justify-content: center;
+  }
+  .choice {
+  }
+}
+@media (max-width: 476px) {
+  .hand {
+    width: 8rem;
+    height: 20rem;
+  }
+  .outcome__title {
+    font-size: 3rem;
+    -webkit-text-stroke: 2px #000;
+  }
+  .result__score,
+  .result__name {
+    -webkit-text-stroke: 2px #000;
+  }
+  .outcome__btn {
+    font-size: 2rem;
+  }
+  .choice__btn {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+  .choice {
+    gap: 2rem;
+  }
+}
+@media (max-width: 395px) {
+  .outcome__btn {
+    font-size: 1.5rem;
+  }
+
+  .result__score {
+    -webkit-text-stroke: 1px #000;
+    font-size: 4rem;
+    margin: 0;
+  }
+  .result__name {
+    -webkit-text-stroke: 1px #000;
+    font-size: 1.5rem;
+  }
+  .outcome__title {
+    font-size: 2.5rem;
+    -webkit-text-stroke: 1px #000;
+  }
+  .hand {
+    width: 6rem;
+    height: 15rem;
+  }
 }
