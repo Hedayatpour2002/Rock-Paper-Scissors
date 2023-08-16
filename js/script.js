@@ -55,16 +55,16 @@ function result(user, ai) {
   resultAnimation(user, ai);
 
   if (user === ai) {
-    outcomeTitleElem.innerHTML = "it's a drow";
+    outcomeTitleElem.innerHTML = "it's  a  drow";
   } else if (
     (user === "rock" && ai === "scissors") ||
     (user === "paper" && ai === "rock") ||
     (user === "scissors" && ai === "paper")
   ) {
-    outcomeTitleElem.innerHTML = "you win!";
+    outcomeTitleElem.innerHTML = "you  win!";
     scores.user++;
   } else {
-    outcomeTitleElem.innerHTML = "you loose!";
+    outcomeTitleElem.innerHTML = "you  loose!";
     scores.ai++;
   }
 
