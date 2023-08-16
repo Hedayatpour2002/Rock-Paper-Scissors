@@ -53,13 +53,18 @@ button {
   color: #fff;
   background-color: var(--blue);
   position: relative;
-
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between; */
+  overflow: hidden;
 }
 .wrapper {
   padding: 1.5rem;
+  max-width: 100rem;
+  margin: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 100;
+  position: relative;
 }
 /* result */
 .result {
@@ -98,12 +103,11 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: relative;
   bottom: 5rem;
   left: 0;
   right: 0;
   gap: 3.1rem;
-  z-index: 100;
 }
 /* ############### */ /* todo */
 .processing .choice,
@@ -117,8 +121,8 @@ button {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  width: 22.2rem;
-  height: 22.2rem;
+  width: 15rem;
+  height: 15rem;
   position: relative;
   transition: all 0.3s;
 
@@ -140,7 +144,7 @@ button {
   animation: choiceHover 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .choice__img {
-  width: 130%;
+  width: 100%;
   position: absolute;
   bottom: 0;
   transition: all 0.3s;
@@ -150,136 +154,12 @@ button {
   animation: skew-y-shakeing 0.3s 1 forwards alternate;
 }
 
-/* hand */
-.hand__wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  overflow: hidden;
-}
-.hand {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  bottom: -10%;
-}
-.ai_hand {
-  animation: aiHandShake 2s linear infinite both;
-  left: -5%;
-}
-.human_hand {
-  justify-self: flex-end;
-  animation: humanHandShake 2s linear infinite both;
-  right: -5%;
-}
-
-/* ############### */ /* todo */
-.processing .ai_hand {
-  animation: aiProcessing 2s linear 1 both;
-}
-.processing .human_hand {
-  animation: humanProcessing 2s linear 1 both;
-}
-.result .hand {
-  animation: none;
-}
-/* ############### */
-
-.action {
-  position: absolute;
-  top: -27rem;
-  z-index: 2;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.ai__action {
-  width: 78.9rem;
-  height: 80.5rem;
-  transform: rotate(14.417deg);
-  left: 37rem;
-  animation: aiActionShake 2s linear infinite both alternate;
-  background-image: url("../images/ai/rock-ai.png");
-}
-.human__action {
-  width: 76.1rem;
-  height: 78.3rem;
-  transform: rotate(-14.417deg) scaleX(-1);
-  right: 28rem;
-  animation: humanActionShake 2s linear infinite both alternate;
-  background-image: url("../images/human/rock-human.png");
-}
-
-/* ###############  */ /* todo */
-.result .action {
-  top: -23rem;
-}
-.result .ai__action {
-  transform: rotate(30deg);
-  left: 39rem;
-}
-.result .human__action {
-  transform: rotate(-30deg) scaleX(-1);
-  right: 33rem;
-}
-/* rock */
-.result .ai__action--rock {
-  background-image: url("../images/ai/rock-ai.png");
-}
-.result .human__action--rock {
-  background-image: url("../images/human/rock-human.png");
-}
-
-/* paper */
-.result .ai__action--paper {
-  background-image: url("../images/ai/paper-ai.png");
-}
-.result .human__action--paper {
-  background-image: url("../images/human/paper-human.png");
-}
-
-/* scissors */
-.result .ai__action--scissors {
-  background-image: url("../images/ai/scissors-ai.png");
-}
-.result .human__action--scissors {
-  background-image: url("../images/human/scissors-human.png");
-}
-
-/*  */
-
-.result .action--animationPaused {
-  animation-play-state: paused;
-}
-/* ############### */
-.arm {
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.ai__arm {
-  width: 44.1rem;
-  height: 121.6rem;
-  background-image: url("../images/ai/arm-ai.png");
-  transform: rotate(50deg);
-}
-.human__arm {
-  width: 44.3rem;
-  height: 121.8rem;
-  background-image: url("../images/human/arm-human.png");
-  transform: rotate(-50deg) scaleX(-1);
-}
-
 /* outcome */
 .outcome {
   display: none;
   flex-direction: column;
 }
-.result .outcome{
+.result .outcome {
   display: flex;
 }
 .outcome__title {
@@ -308,7 +188,8 @@ button {
 }
 .outcome__btn:hover span {
   display: flex;
-  align-items: center;justify-content: center;
+  align-items: center;
+  justify-content: center;
   transform: rotate(-3deg);
 }
 .outcome__btn:hover {
@@ -319,19 +200,156 @@ button {
 .outcome__restart {
 }
 
+/* hand */
+.hand__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.hand {
+  position: relative;
+  bottom: -10%;
+  width: 24rem;
+  height: 60rem;
+
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+.ai_hand {
+  animation-name: aiHandShake;
+}
+.human_hand {
+  animation-name: humanHandShake;
+  z-index: 2;
+}
+
+/* ############### */
+.processing .ai_hand {
+  animation-iteration-count: 1;
+  animation-name: aiProcessing;
+}
+.processing .human_hand {
+  animation-iteration-count: 1;
+
+  animation-name: humanProcessing;
+}
+.result .hand {
+  animation: none;
+}
+/* ############### */
+
+.action {
+  width: 100%;
+  height: 35%;
+  position: absolute;
+  z-index: 2;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transform-origin: bottom;
+
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+.ai__action {
+  transform: rotate(15deg);
+  animation-name: aiActionShake;
+  background-image: url("../images/ai/rock-ai.png");
+  top: -2%;
+  left: 85%;
+}
+.human__action {
+  transform: rotate(-15deg);
+  animation-name: humanActionShake;
+  background-image: url("../images/human/rock-human.png");
+  top: -4%;
+  right: 80%;
+}
+
+/* ###############  */
+.result .action--animationPaused {
+  animation-play-state: paused;
+}
+
+.result .ai__action {
+  transform: rotate(+43deg) !important;
+}
+.result .human__action {
+  transform: rotate(-43deg) !important;
+}
+/* rock */
+.result .ai__action--rock {
+  background-image: url("../images/ai/rock-ai.png");
+}
+.result .human__action--rock {
+  background-image: url("../images/human/rock-human.png");
+}
+
+/* paper */
+.result .ai__action--paper {
+  background-image: url("../images/ai/paper-ai.png");
+  height: 45%;
+  top: -10%;
+}
+.result .human__action--paper {
+  background-image: url("../images/human/paper-human.png");
+  height: 45%;
+  top: -15%;
+  right: 80%;
+}
+
+/* scissors */
+.result .ai__action--scissors {
+  background-image: url("../images/ai/scissors-ai.png");
+  height: 50%;
+  top: -15%;
+}
+.result .human__action--scissors {
+  background-image: url("../images/human/scissors-human.png");
+  height: 50%;
+  top: -15%;
+  right: 80%;
+}
+/* ############### */
+
+.arm {
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+}
+.ai__arm {
+  background-image: url("../images/ai/arm-ai.png");
+  transform: rotate(50deg);
+}
+.human__arm {
+  background-image: url("../images/human/arm-human.png");
+  transform: rotate(-50deg);
+}
+
 /* animations */
 
 @keyframes aiHandShake {
-  0 {
+  0% {
     transform: rotate(0deg);
   }
-  25% {
-    transform: rotate(-2deg);
+  20% {
+    transform: rotate(-10deg);
   }
-  50% {
-    transform: rotate(0);
-  }
-  75% {
+  90% {
     transform: rotate(2deg);
   }
   100% {
@@ -340,16 +358,13 @@ button {
 }
 
 @keyframes humanHandShake {
-  0 {
+  0% {
     transform: rotate(0deg);
   }
-  25% {
-    transform: rotate(2deg);
+  20% {
+    transform: rotate(10deg);
   }
-  50% {
-    transform: rotate(0);
-  }
-  75% {
+  90% {
     transform: rotate(-2deg);
   }
   100% {
@@ -358,28 +373,26 @@ button {
 }
 
 @keyframes aiActionShake {
-  0 {
-    transform: rotate(14.417deg);
+  0% {
+    transform: rotate(7deg);
   }
-
   100% {
-    transform: rotate(19.417deg);
+    transform: rotate(23deg);
   }
 }
+
 @keyframes humanActionShake {
-  0 {
-    transform: rotate(-14.417deg) scaleX(-1);
+  0% {
+    transform: rotate(-7deg);
   }
   100% {
-    transform: rotate(-25.417deg) scaleX(-1);
-    right: 75%;
-    top: -20%;
+    transform: rotate(-23deg);
   }
 }
 
 /* Processing */
 @keyframes aiProcessing {
-  0 {
+  0% {
     transform: rotate(0deg);
   }
   10% {
@@ -405,7 +418,7 @@ button {
   }
 }
 @keyframes humanProcessing {
-  0 {
+  0% {
     transform: rotate(0deg);
   }
   10% {
