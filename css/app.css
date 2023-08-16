@@ -22,6 +22,7 @@ body {
   font-family: "seymour one";
   line-height: 1.6;
   font-size: 1.6rem;
+  background-color: var(--blue);
 }
 
 /* 
@@ -51,9 +52,35 @@ button {
   width: 100%;
   min-height: 100vh;
   color: #fff;
-  background-color: var(--blue);
   position: relative;
   overflow: hidden;
+}
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  top: 50%;
+  bottom: 50%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+}
+.bg-blue .bg--active {
+  background-color: var(--blue);
+  transform: translate(-50%, -50%) scale(1);
+  border-radius: 0;
+}
+.bg-rose .bg--active {
+  background-color: var(--rose);
+  transform: translate(-50%, -50%) scale(1);
+  border-radius: 0;
+}
+.bg-green .bg--active {
+  background-color: var(--green);
+  transform: translate(-50%, -50%) scale(1);
+  border-radius: 0;
 }
 .wrapper {
   padding: 1.5rem;

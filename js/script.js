@@ -1,6 +1,8 @@
 const $ = document;
 const body = $.body;
 
+const bgElem = $.querySelector(".bg");
+
 const userScoreElem = $.querySelector(".human-score");
 const aiScoreElem = $.querySelector(".ai-score");
 const choiceElements = $.querySelectorAll(".choice__btn");
@@ -30,7 +32,7 @@ choiceElements.forEach((item) => {
     let userChoice = item.dataset.choice;
     let aiChoice = aiSelection();
 
-    $.body.classList.add("processing");
+    body.classList.add("processing");
 
     setTimeout(() => {
       result(userChoice, aiChoice);
@@ -53,15 +55,19 @@ function result(user, ai) {
     (user === "paper" && ai === "rock") ||
     (user === "scissors" && ai === "paper")
   ) {
-    outcomeTitleElem.innerHTML = "you  win!";
     scores.user++;
+    outcomeTitleElem.innerHTML = "you  win!";
+    body.classList.add("bg-green");
   } else {
-    outcomeTitleElem.innerHTML = "you  loose!";
     scores.ai++;
+    outcomeTitleElem.innerHTML = "you  loose!";
+    body.classList.add("bg-rose");
   }
 
   updateResultElements();
   updateLocalStorage();
+
+  bgElem.classList.add("bg--active");
 }
 function updateResultElements() {
   userScoreElem.innerHTML = scores.user;
@@ -85,6 +91,7 @@ function resultAnimation(user, ai) {
 nextElem.addEventListener("click", () => {
   body.classList.remove("result");
   removeActionElementsClass();
+  updateBG();
 });
 restartElem.addEventListener("click", () => {
   body.classList.remove("result");
@@ -92,6 +99,7 @@ restartElem.addEventListener("click", () => {
   removeActionElementsClass();
   updateResultElements();
   updateLocalStorage();
+  updateBG();
 });
 
 function removeActionElementsClass() {
@@ -102,4 +110,8 @@ function removeActionElementsClass() {
 
   humanCalss.remove("action--animationPaused");
   aiCalss.remove("action--animationPaused");
+}
+function updateBG() {
+  bgElem.classList.remove("bg--active");
+  body.classList = "";
 }
