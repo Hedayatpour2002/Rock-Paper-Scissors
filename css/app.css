@@ -1,3 +1,146 @@
+/* reset css */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* font css */
+@font-face {
+  font-family: "seymour one";
+  src: url("../font/Seymour_One/SeymourOne-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "shrikhand";
+  src: url("../font/Shrikhand/Shrikhand-Regular.ttf") format("truetype");
+}
+
+/* app css */
+
 :root {
   --pink: #ff9d9d;
   --rose: #ff9de9;
@@ -496,5 +639,140 @@ button {
     transform: translateZ(50px) translateX(-12px) translateY(-12px);
     box-shadow: 12px 12px 20px -12px rgba(0, 0, 0, 0.35);
     filter: drop-shadow(10px 10px 0px #000);
+  }
+}
+
+/* responsive css */
+@media (max-width: 1400px) {
+  .result__score {
+    font-size: 14rem;
+  }
+  .result__name {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 1200px) {
+  .hand {
+    width: 20rem;
+    height: 50rem;
+  }
+  .outcome__title {
+    font-size: 7rem;
+  }
+}
+@media (max-width: 992px) {
+  .result__score {
+    font-size: 10rem;
+  }
+  .result__name {
+    font-size: 3rem;
+  }
+  .outcome__title {
+    font-size: 5rem;
+    letter-spacing: 0;
+  }
+  .hand {
+    width: 16rem;
+    height: 40rem;
+  }
+  .choice__btn {
+    width: 10rem;
+    height: 10rem;
+  }
+  .outcome {
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 768px) {
+  .result__score {
+    font-size: 5rem;
+    margin: -2rem 0;
+  }
+  .result__name {
+    letter-spacing: 0;
+    font-size: 2rem;
+  }
+  .outcome__title {
+    font-size: 4rem;
+  }
+  .outcome__btn {
+    font-size: 2.5rem;
+  }
+  .choice__btn {
+    width: 8rem;
+    height: 8rem;
+  }
+  .hand {
+    width: 12rem;
+    height: 30rem;
+  }
+  .choice,
+  .outcome {
+    bottom: 0;
+  }
+}
+@media (max-width: 576px) {
+  .hand {
+    width: 10rem;
+    height: 25rem;
+  }
+  .choice__btn {
+    width: 7rem;
+    height: 7rem;
+  }
+  .outcome,
+  .choice {
+    flex-grow: 1;
+    justify-content: center;
+  }
+  .choice {
+  }
+}
+@media (max-width: 476px) {
+  .hand {
+    width: 8rem;
+    height: 20rem;
+  }
+  .outcome__title {
+    font-size: 3rem;
+    -webkit-text-stroke: 2px #000;
+  }
+  .result__score,
+  .result__name {
+    -webkit-text-stroke: 2px #000;
+  }
+  .outcome__btn {
+    font-size: 2rem;
+  }
+  .choice__btn {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+  .choice {
+    gap: 2rem;
+  }
+}
+@media (max-width: 395px) {
+  .outcome__btn {
+    font-size: 1.5rem;
+  }
+
+  .result__score {
+    -webkit-text-stroke: 1px #000;
+    font-size: 4rem;
+    margin: 0;
+  }
+  .result__name {
+    -webkit-text-stroke: 1px #000;
+    font-size: 1.5rem;
+  }
+  .outcome__title {
+    font-size: 2.5rem;
+    -webkit-text-stroke: 1px #000;
+  }
+  .hand {
+    width: 6rem;
+    height: 15rem;
   }
 }
