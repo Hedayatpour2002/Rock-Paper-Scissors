@@ -3,6 +3,9 @@
 ## Demo
 [Check the live demo here ⭐](https://prismatic-bavarois-31e1e9.netlify.app/)
 
+## Preview
+![Preview](preview.gif)
+
 This is a simple rock-paper-scissors game built with JavaScript. To play, simply click on one of the three buttons: rock, paper, or scissors. The computer will then randomly choose a move, and the winner will be determined based on the following rules:
 
 * Rock beats scissors
